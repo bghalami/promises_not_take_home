@@ -1,0 +1,11 @@
+<h1>Promise by <%= @promise.person %></h1>
+<ul>
+  <li>Promiser: <%= @romise.person %></li>
+  <li>Promise: <%= @promise.promise %></li>
+  <li>Status: <%= @promise.status %></li>
+    <%= form_for @promise do |f| %>
+      <%= f.label :status %>
+      <%= f.select :status, ['in progress', 'abandoned', 'done'] %>
+      <%= f.submit "Update Status" %>
+    <% end %>
+</ul>
