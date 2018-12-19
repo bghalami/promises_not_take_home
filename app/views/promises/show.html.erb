@@ -1,11 +1,21 @@
+<%= link_to "All Promises", promises_path%>
+
 <h1>Promise by <%= @promise.person %></h1>
 <ul>
-  <li>Promiser: <%= @romise.person %></li>
+  <li>Promiser: <%= @promise.person %></li>
   <li>Promise: <%= @promise.promise %></li>
   <li>Status: <%= @promise.status %></li>
+  <li>Update Status:
     <%= form_for @promise do |f| %>
       <%= f.label :status %>
       <%= f.select :status, ['in progress', 'abandoned', 'done'] %>
       <%= f.submit "Update Status" %>
     <% end %>
+    </li>
 </ul>
+
+<br>
+<br>
+
+
+<li><%= link_to "Delete", promise_path(@promise), method: :delete %></li>

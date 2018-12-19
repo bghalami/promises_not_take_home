@@ -1,8 +1,8 @@
 <h1>Look at all these promises!</h1>
-
+<%= link_to "New Promise", new_promise_path %>
 <% @promises.each do |promise| %>
   <ul>
-    <li>Promiser: <%= promise.person %></li>
+    <li><%= link_to "Promise By #{promise.person}", promise_path(promise)%></li>
     <li>Promise: <%= promise.promise %></li>
     <li>Status: <%= promise.status %></li>
       <%= form_for promise do |f| %>

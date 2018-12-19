@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :promises, only: [:new, :create, :index, :show, :delete, :update]
+  root 'promises#index'
+  resources :promises, only: [:new, :create, :index, :show, :destroy, :update]
 end

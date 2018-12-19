@@ -1,1 +1,11 @@
 <h1>Make a promise here!</h1>
+
+<%= form_for @promise do |f| %>
+  <%= f.label :person %>
+  <%= f.text_field :person %>
+  <%= f.label :promise %>
+  <%= f.text_area :promise %>
+  <%= f.label :status %>
+  <%= f.select :status, ['in progress', 'abandoned', 'done'] %>
+  <%= f.submit "Create Promise" %>
+<% end %>
